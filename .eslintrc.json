@@ -1,0 +1,80 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react",
+    "@grncdr/react-hooks",
+    "import"
+  ],
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "react-native/no-inline-styles": 0,
+    "no-console": [
+      1,
+      {
+        "allow": [
+          "info"
+        ]
+      }
+    ],
+    "no-unused-vars": 1,
+    "@typescript-eslint/no-explicit-any": [
+      1,
+      {
+        "ignoreRestArgs": true
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": 1,
+    "@typescript-eslint/no-empty-function": 1,
+    "@typescript-eslint/ban-types": 0,
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "import/order": [
+      1,
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "@grncdr/react-hooks/rules-of-hooks": "error",
+    "@grncdr/react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "(mem)",
+        "staticHooks": {
+          "useBindingValue": true,
+          "useSafeCallback": true,
+          "useAsync": [true, false, true, true],
+          "useBetterState": [false, true, true]
+        }
+      }
+    ]
+  }
+}
